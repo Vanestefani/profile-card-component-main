@@ -2,14 +2,103 @@
   --DarkCyan: hsl(185, 75%, 39%);
   --VeryDarkDesaturatedBlue: hsl(229, 23%, 23%);
   --DarkGrayishBlue: hsl(227, 10%, 46%);
+  --white: #f0f1f1;
 }
 html {
   box-sizing: border-box;
+  font-size: 16px;
 }
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 body {
   font-family: "Kumbh Sans", sans-serif;
   background-color: var(--DarkCyan);
+  background-image: url('../images/bg-pattern-top.svg'), url('../images/bg-pattern-bottom.svg');
+  background-repeat: no-repeat , no-repeat;
+  background-position: right 50vw bottom 50vh, left 50vw top 50vh;
+}
+
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+.card {
+  background: var(--white);
+  border-radius: 10px;
+
+
+  min-height: 320px;
+  overflow: hidden;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.253);
+
+  &-header {
+    width: 100%;
+    display: block;
+  }
+  &-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 0.5px solid hsla(227, 10%, 46%, 0.24);
+    &-profile-image {
+      border-radius: 50%;
+      border: 6px solid var(--white);
+      margin-top: calc(-48px - 6px);
+      object-fit: cover;
+    }
+    &-title {
+      color: var(--VeryDarkDesaturatedBlue);
+      font-size: 18px;
+      margin-top: 2rem;
+      font-weight: 700;
+      span {
+        color: var(--DarkGrayishBlue);
+        font-weight: 400;
+        margin-left: 0.5rem;
+      }
+    }
+    &-country {
+      color: var(--DarkGrayishBlue);
+      margin: 0 0 2rem 0;
+      
+    }
+  }
+  &-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    align-content: center;
+    padding: 1rem;
+    &-count{
+      h3 {
+        margin-bottom: 0.5rem;
+        color: var(--VeryDarkDesaturatedBlue);
+      }
+      p {
+        margin-top: 0;
+        letter-spacing: 1px;
+        font-size: 0.8rem;
+        color: var(--DarkGrayishBlue);
+      }
+
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  height: 10vh;
+  color: var(--white);
+  a {
+    text-decoration: none;
+    color: var(--VeryDarkDesaturatedBlue);
+    font-weight: 700;
+  }
 }
